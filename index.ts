@@ -13,7 +13,7 @@ const TRANSLATE_PROMPT = (mood) => `
   The rewrite must be as accurate as possible. *Never quote* the original text.
   Do not caption.
   Do not include original text in response.
-  The response must be maximum ~4000 characters.
+  The response must be maximum 200 words.
 `;
 
 expressApp.use("/translate", (req, res) => {
@@ -36,7 +36,7 @@ expressApp.use("/translate", (req, res) => {
       },
       {
         role: "user",
-        content: value.substring(0, 4000),
+        content: value.substring(0, 500),
       },
     ];
 
@@ -49,6 +49,8 @@ expressApp.use("/translate", (req, res) => {
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages,
+        temperature: 0.8,
+        max_tokens: 200,
       }),
     })
       .then((data) => {

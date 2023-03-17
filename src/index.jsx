@@ -53,8 +53,13 @@ function Main() {
           value={value}
           onInput={onValueChange}
           className="w-full h-64 p-2 border-2 border-blue-500"
+          maxLength={500}
         />
-        <div className="flex">
+        {/* text counter at right */}
+        <div className="text-right text-gray-500">
+          {value.length} / 500
+        </div>
+        <div className="flex mt-4">
           <select
             className="w-full p-2 border-2 border-blue-500 mr-2"
             onInput={onMoodChange}
