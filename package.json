@@ -1,0 +1,34 @@
+{
+  "name": "mood-convert-ampt",
+  "version": "0.0.1",
+  "description": "Ampt and OpenAI example app",
+  "private": true,
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "ampt:build": "npm run build",
+    "ampt:watch": "vite build -w",
+    "ampt:dev": "npm run start"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^4.0.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  },
+  "dependencies": {
+    "@ampt/data": "^0.0.1-beta.8",
+    "@ampt/sdk": "latest",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1"
+  },
+  "ampt": {
+    "app": "ampt-test-fka",
+    "org": "fkadev"
+  }
+}
