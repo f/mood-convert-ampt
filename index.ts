@@ -30,6 +30,10 @@ expressApp.use('/translate', (req, res) =>{
         content: TRANSLATE_PROMPT(mood),
       },
       {
+        role: "assistant",
+        content: "OK. Write me the text you want to rewrite.",
+      },
+      {
         role: "user",
         content: value,
       }
