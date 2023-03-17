@@ -6,6 +6,7 @@ import fetch from "node-fetch";
 const expressApp = express();
 
 const KEY = params("OPENAI_KEY");
+const MODEL = "gpt-4";
 
 const TRANSLATE_PROMPT = (mood) => `
   You are text rewriter that rewrites user's input using *${mood.toLowerCase()}* style.
@@ -47,7 +48,7 @@ expressApp.use("/translate", (req, res) => {
         Authorization: `Bearer ${KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
+        model: MODEL,
         messages,
         temperature: 0.8,
         max_tokens: 200,
